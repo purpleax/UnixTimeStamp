@@ -3,8 +3,8 @@ import calendar
 from datetime import datetime, timedelta, timezone
 
 def calculate_timestamps(minutes):
-    # Get the current UTC time
-    until_time = datetime.now(timezone.utc).replace(second=0, microsecond=0)
+    # Get the current UTC time and subtract 5 minutes from it
+    until_time = datetime.now(timezone.utc).replace(second=0, microsecond=0) - timedelta(minutes=5)
     
     # Calculate the 'from' time by subtracting the specified minutes
     from_time = until_time - timedelta(minutes=minutes)
